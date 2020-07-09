@@ -1,0 +1,11 @@
+{
+  "name": "gatsby-remark-default-code-lang",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:pieh/gatsby-remark-default-code-lang.git",
+  "author": "Michal Piechowiak <misiek.piechowiak@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "unist-util-visit": "^2.0.2"
+  }
+}

@@ -2,9 +2,10 @@
 
 This plugin sets default code block or inline code language.
 
-Use together with `gatsby-remark-prismjs` (place `gatsby-remark-default-code-lang` before `gatsby-remark-prismjs`, so prismjs receive updated content):
+Use together with `gatsby-remark-prismjs`:
 
 ```js
+// gatsby-remark-default-code-lang should be before `gatsby-remark-prismjs` and `gatsby-remark-code-titles` (if you use it)
 {
   resolve: `gatsby-remark-default-code-lang`,
   options: {
@@ -14,6 +15,8 @@ Use together with `gatsby-remark-prismjs` (place `gatsby-remark-default-code-lan
     blockCodeDefaultLanguage: "csharp",
   },
 },
+// optional
+`gatsby-remark-code-titles`,
 {
   resolve: `gatsby-remark-prismjs`,
   options: {

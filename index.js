@@ -4,6 +4,14 @@ module.exports = async ({ markdownAST }, pluginOptions = {}) => {
   visit(markdownAST, `code`, (node) => {
     if (!node.lang) {
       node.lang = pluginOptions.blockCodeDefaultLanguage;
+    } else {
+      // gatsby-remark-code-titles compat
+      // if lang start with "title=X" or ":title=X"
+      // it will transform it to "{defaultLanguage}:title=X"
+      const match = node.lang.match(/^(\s*):?([^=\s:]+=.+$)/);
+      if (match && match.length >= 2) {
+        node.lang = `${pluginOptions.blockCodeDefaultLanguage}:${match[2]}`;
+      }
     }
   });
 
